@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md — Scaffold Vite + TS project, define types, port logic with unit tests
 - [x] 01-02-PLAN.md — Port HTML/CSS/rendering to typed modules, pixel-perfect clone
-- [ ] 01-03-PLAN.md — GitHub Actions deploy workflow and visual refresh
+- [x] 01-03-PLAN.md — GitHub Actions deploy workflow and visual refresh
 - [x] 01-04-PLAN.md — Supabase schema migration (SQL file with RLS, constraints, indexes)
 **UI hint**: yes
 

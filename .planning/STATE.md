@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: "Checkpoint: 01-02 Task 2 human-verify"
-last_updated: "2026-04-04T14:54:09.729Z"
+stopped_at: "Checkpoint: 01-03 Task 2 human-verify"
+last_updated: "2026-04-04T15:03:39.673Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 4
-  completed_plans: 3
-  percent: 75
+  completed_plans: 4
+  percent: 100
 ---
 
 # Project State
@@ -70,6 +70,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: jsdom vitest environment for esc() tests (document.createElement dependency)
 - [Phase 01-foundation]: Pure functions for scoring: recalcScores/calcStreaks take events array as param, no global reads
 - [Phase 01-foundation]: Expose render handlers to window via Object.assign for inline onclick compatibility in generated HTML
+- [Phase 01-foundation]: Deploy workflow uses actions/deploy-pages@v4 with id-token: write for signed artifacts (no env secrets needed at build time)
+- [Phase 01-foundation]: D-05 refresh: surface tokens only changed (bg, borders, radii, shadows) — all color hues, sizes, tap targets, layout unchanged
 
 ### Pending Todos
 
@@ -82,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T14:54:09.726Z
-Stopped at: Checkpoint: 01-02 Task 2 human-verify
+Last session: 2026-04-04T15:03:35.014Z
+Stopped at: Checkpoint: 01-03 Task 2 human-verify
 Resume file: None
