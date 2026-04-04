@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All existing features (rotation, scoring, roster, event log) work identically in the TypeScript build
   3. TypeScript strict mode passes with zero `any` types in scoring and stats logic
   4. Supabase schema (clubs, teams, players, team_players, matches, events, profiles) exists with RLS policies, CHECK constraints, and indexes applied
-**Plans:** 4 plans
+**Plans:** 2/4 plans executed
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Vite + TS project, define types, port logic with unit tests
+- [x] 01-01-PLAN.md — Scaffold Vite + TS project, define types, port logic with unit tests
 - [ ] 01-02-PLAN.md — Port HTML/CSS/rendering to typed modules, pixel-perfect clone
 - [ ] 01-03-PLAN.md — GitHub Actions deploy workflow and visual refresh
-- [ ] 01-04-PLAN.md — Supabase schema migration (SQL file with RLS, constraints, indexes)
+- [x] 01-04-PLAN.md — Supabase schema migration (SQL file with RLS, constraints, indexes)
 **UI hint**: yes
 
 ### Phase 2: Auth & Access
@@ -95,7 +95,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/4 | Planning complete | - |
+| 1. Foundation | 2/4 | In Progress|  |
 | 2. Auth & Access | 0/? | Not started | - |
 | 3. Game Loop & Sync | 0/? | Not started | - |
 | 4. Statistics & Roster | 0/? | Not started | - |

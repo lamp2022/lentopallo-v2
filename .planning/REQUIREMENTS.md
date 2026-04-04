@@ -7,9 +7,9 @@
 
 ### Migration
 
-- [ ] **MIG-01**: Existing index.html migrated to Vite + vanilla TypeScript project
+- [x] **MIG-01**: Existing index.html migrated to Vite + vanilla TypeScript project
 - [ ] **MIG-02**: All existing functionality preserved (rotation, scoring, roster, event log, localStorage)
-- [ ] **MIG-03**: TypeScript strict mode with no `any` types in scoring/stats logic
+- [x] **MIG-03**: TypeScript strict mode with no `any` types in scoring/stats logic
 - [ ] **MIG-04**: GitHub Pages deployment via Vite build output
 
 ### Authentication
@@ -148,9 +148,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MIG-01 | Phase 1 | Pending |
+| MIG-01 | Phase 1 | Complete |
 | MIG-02 | Phase 1 | Pending |
-| MIG-03 | Phase 1 | Pending |
+| MIG-03 | Phase 1 | Complete |
 | MIG-04 | Phase 1 | Pending |
 | DB-01 | Phase 1 | Pending |
 | DB-02 | Phase 1 | Pending |
