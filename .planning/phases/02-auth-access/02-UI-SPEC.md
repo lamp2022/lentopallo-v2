@@ -42,7 +42,8 @@ Declared values (must be multiples of 4):
 | 3xl | 64px | Score button height (critical path) |
 
 Exceptions:
-- Touch target minimum: 48px height on all tappable elements (REQUIREMENTS.md UI-02). Score buttons (±1): 70px height (inherited from Phase 1). Rotate button: 56px height (inherited from Phase 1).
+
+- Touch target minimum: 48px height on all tappable elements (REQUIREMENTS.md UI-02). Rotate button: 56px height (inherited from Phase 1).
 - Login screen email input: 52px height to match mobile keyboard ergonomics.
 - Body page padding: 20px (inherited from Phase 1 `body` rule — not on 8-point scale, preserve for visual continuity).
 
@@ -55,13 +56,14 @@ Exceptions:
 | Body | 14px | 400 (regular) | 1.5 | system-ui |
 | Label | 14px | 600 (semibold) | 1.2 | mono |
 | Heading | 16px | 600 (semibold) | 1.2 | mono |
-| Display | 28px | 700 (bold) | 1.1 | mono |
+| Display | 28px | 600 (semibold) | 1.1 | mono |
 
 Notes:
+
 - Body 14px/400 inherited from Phase 1 `body { font-size: 14px }`.
 - Heading 16px/600 inherited from Phase 1 `h1 { font-size: 16px; font-weight: 600 }`.
 - Display 28px is used on the score ±1 buttons in Phase 1; reuse for team name on team selection screen.
-- Only two font weights in use: 400 (regular) and 600 (semibold). 700 is used on score buttons only — do not introduce 700 in auth screens.
+- Only two font weights in use: 400 (regular) and 600 (semibold).
 - Letter-spacing on uppercase mono labels: 0.06–0.08em (match Phase 1 `h1`, `h2` patterns).
 
 ---
@@ -89,7 +91,10 @@ Surface (`--surface: #fef3c7`) is amber-tinted and is Phase 1's court cell backg
 
 **Layout:** Single centered card, max-width 400px, vertically centered on screen. Body padding 20px.
 
+**Focal point:** The primary CTA button ("Lähetä kirjautumislinkki") is the visual anchor of the login screen — full-width, `--blue` fill, highest contrast element, positioned immediately below the email input.
+
 **Elements:**
+
 - App name heading (h1 style, `--blue`, mono, uppercase, letter-spacing 0.08em): "LENTOPALLO"
 - Subheading (14px, `--text2`, regular): "Kirjaudu syöttämällä sähköpostisi"
 - Email input (width 100%, height 52px, `--surface2` background, `--border` border 1px, border-radius 4px, 14px mono, padding 0 12px). On focus: border changes to `--blue` 2px.
@@ -97,6 +102,7 @@ Surface (`--surface: #fef3c7`) is amber-tinted and is Phase 1's court cell backg
 - No password field. No social login. No "remember me". (out of scope per REQUIREMENTS.md)
 
 **States:**
+
 1. Default — empty email input, CTA enabled.
 2. Typing — input has content, CTA enabled.
 3. Loading — CTA shows "Lähetetään..." text, button disabled (opacity 0.5), no spinner required (text change is sufficient).
@@ -104,6 +110,7 @@ Surface (`--surface: #fef3c7`) is amber-tinted and is Phase 1's court cell backg
 5. Error (invalid email format) — input border turns `--red`, error text appears below input in 13px `--red`.
 
 **Success state (after link sent):**
+
 - Replace card content entirely.
 - Icon: checkmark in `--green` (unicode ✓, 24px, mono).
 - Heading (16px, semibold, `--green`): "Linkki lähetetty"
@@ -117,11 +124,13 @@ Surface (`--surface: #fef3c7`) is amber-tinted and is Phase 1's court cell backg
 **Layout:** Full-screen centered, body background `--bg`.
 
 **Elements:**
+
 - App name (same h1 style as login).
 - Status text (14px, `--text2`, centered): "Kirjaudutaan sisään..."
 - No spinner graphic. Use animated text ellipsis via CSS: `::after { content: '...'; animation: ellipsis 1.2s steps(3, end) infinite; }`.
 
 **Error state (expired / invalid link):**
+
 - Heading (16px, semibold, `--text`): "Linkki on vanhentunut"
 - Body (14px, `--text2`, 1.5): "Kirjautumislinkki on käytetty tai vanhentunut. Pyydä uusi linkki."
 - Button (width 100%, max-width 320px, height 52px, `--blue` background, #fff text): "Pyydä uusi linkki" — navigates back to login screen.
@@ -131,10 +140,12 @@ Surface (`--surface: #fef3c7`) is amber-tinted and is Phase 1's court cell backg
 **Layout:** Page with standard body padding 20px. Not a modal — full page navigation.
 
 **Header strip:**
+
 - Left: App name (h1 style, `--blue`, mono).
 - Right: User email (14px, `--text3`, truncated at 200px) + "Kirjaudu ulos" link (14px, `--red`, no button chrome, cursor pointer).
 
 **Content:**
+
 - Section heading (h2 style, 14px, semibold mono, uppercase, `--text2`): "VALITSE JOUKKUE"
 - Team list: vertical stack of team cards, gap 8px, max-width 520px.
 - Team card: `--surface2` background, 1px `--border` border, border-radius 10px, padding 16px 20px, min-height 64px (48px + 16px padding). Display flex, align-items center, gap 12px. cursor pointer.
@@ -176,6 +187,7 @@ Language: Finnish (I18N-01 scoped to Phase 5, but auth screens must be Finnish f
 ## Interaction Contracts
 
 ### Touch targets
+
 - All tappable elements: minimum height 48px (REQUIREMENTS.md UI-02).
 - Team cards: min-height 64px (comfortable one-handed tap on 375px screen).
 - Email input: height 52px.
@@ -183,21 +195,26 @@ Language: Finnish (I18N-01 scoped to Phase 5, but auth screens must be Finnish f
 - "Kirjaudu ulos" and "Lähetä uudelleen" text links: min tap area 44px via padding (not visible padding — add `padding: 12px 4px` to achieve 44px without visual bulk).
 
 ### Two-tap confirmation
+
 Sign-out is the only destructive action in this phase. Pattern: match Phase 1 `confirmingNewGame` boolean flag.
+
 1. Tap "Kirjaudu ulos" → text changes to "Vahvista uloskirjautuminen" in `--red`, 3s timeout.
 2. Second tap within 3s → executes `supabase.auth.signOut()`, navigates to login screen.
 
 ### Focus management
+
 - On login screen load: auto-focus email input (mobile keyboard opens immediately — reduces friction for courtside use case).
 - On auth error screen: auto-focus the "Pyydä uusi linkki" button.
 - On team selection screen: no auto-focus (user needs to read team list).
 
 ### Session persistence (AUTH-03)
+
 - On page load: check `supabase.auth.getSession()`. If session exists and is valid, skip login screen entirely and navigate directly to team selection.
 - If no session and no `#access_token` in URL hash: show login screen.
 - If `#access_token` in URL hash: show auth loading screen, process token, then navigate to team selection.
 
 ### Routing (AUTH-04 — GitHub Pages hash-based)
+
 - Hash fragments used for auth redirect: `https://[username].github.io/[repo]/#access_token=...`
 - Auth screen detects `window.location.hash` for token on load.
 - No SPA router — vanilla hash detection in `main.ts` on `DOMContentLoaded`.
