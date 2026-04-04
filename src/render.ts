@@ -469,7 +469,7 @@ export function clearCourt(): void {
     state.confirmingClear = true
     const btn = document.getElementById('clearBtn') as HTMLButtonElement
     if (btn) {
-      btn.textContent = 'Vahvista tyhjennyss?'
+      btn.textContent = 'Vahvista tyhjennys'
       btn.style.borderColor = 'var(--red)'
       btn.style.color = 'var(--red)'
     }
