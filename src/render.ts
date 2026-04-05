@@ -187,8 +187,8 @@ export function renderRoster(): void {
       `<span class="name" onclick="editName(${p.nr}, this)">${nameDisplay}</span> ` +
       `<select class="role-select" onchange="setRole(${p.nr}, this.value)">` +
       `<option value=""${selNorm}>Normaali</option>` +
-      `<option value="libero"${selLib}>Libero</option>` +
-      `<option value="passari"${selPas}>Passari</option>` +
+      `<option value="libero"${selLib}>\uD83D\uDD34 Libero</option>` +
+      `<option value="passari"${selPas}>\uD83D\uDD35 Passari</option>` +
       `</select> ` +
       `<span class="remove" onclick="removePlayer(${p.nr})" data-role="${escapedRole}">&times;</span>` +
       `</span>`
