@@ -59,6 +59,10 @@
   /* Gradient endpoints for score buttons */
   --green-gradient: #059669;
   --red-gradient: #dc2626;
+
+  /* Rotation button gradient (dark: cyan→blue) */
+  --rotate-from: var(--cyan);
+  --rotate-to: var(--blue);
 }
 
 /* ---- Light Theme ---- */
@@ -80,10 +84,13 @@
   --text2: #4a4040;
   --text3: #6b6058;
 
-  /* Saturoitu teal aksentti */
+  /* Teal aksentti (focus, active set, hovers) */
   --cyan: #0f766e;
   --cyan-dim: rgba(15, 118, 110, 0.12);
-  --blue: #115e58;
+  --blue: #834a30;
+  /* Terrakotta rotaatio-nappi */
+  --rotate-from: #9e5a3a;
+  --rotate-to: #834a30;
   --green: #2d8659;
   --green-dim: rgba(45, 134, 89, 0.08);
   --red: #a33030;
@@ -637,10 +644,10 @@ h2 {
   min-width: 260px;
   height: 56px;
   font-size: 18px;
-  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  background: linear-gradient(135deg, var(--rotate-from), var(--rotate-to));
   border: none;
   border-radius: 12px;
-  color: var(--bg);
+  color: #fff;
   font-family: var(--mono);
   font-weight: 500;
   cursor: pointer;
