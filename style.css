@@ -88,9 +88,9 @@
   --cyan: #0f766e;
   --cyan-dim: rgba(15, 118, 110, 0.12);
   --blue: #834a30;
-  /* Terrakotta rotaatio-nappi */
-  --rotate-from: #9e5a3a;
-  --rotate-to: #834a30;
+  /* Warm navy rotaatio-nappi */
+  --rotate-from: #3d5288;
+  --rotate-to: #2f4070;
   --green: #2d8659;
   --green-dim: rgba(45, 134, 89, 0.08);
   --red: #a33030;
@@ -984,3 +984,9 @@ h2 {
   display: inline-block;
   animation: tickPop .4s ease-out;
 }
+
+/* ---- Light theme: fixed role & indicator colors ---- */
+[data-theme="light"] .role-dot.libero { background: #dc2626; box-shadow: 0 0 6px rgba(220,38,38,0.25); }
+[data-theme="light"] .role-dot.passari { background: #2563eb; box-shadow: 0 0 6px rgba(37,99,235,0.25); }
+[data-theme="light"] .serve-ticks { color: #c2710c; text-shadow: 0 0 4px rgba(194,113,12,0.2); }
+[data-theme="light"] .streak-badge { color: #c2710c; text-shadow: 0 0 4px rgba(194,113,12,0.2); }
